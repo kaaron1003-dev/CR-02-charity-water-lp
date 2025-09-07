@@ -1,16 +1,11 @@
 /* charity: water Brand Colors & Fonts
 
 Primary Colors:
-- Yellow:     #FFC907
 - Blue:       #2E9DF7
 
 Secondary Colors:
 - Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
+
 
 Fonts:
 - Proxima Nova
@@ -42,22 +37,29 @@ section {
 }
 
 /* Hero Section Styles */
+/* This adds a background color behind the headline and subheadline */
 .hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
+  background-color: #2E9DF7; /*Blue*/
+  text-align: center;
+  position: relative;
+  padding: 60px 20px;
+  color:#FFC907; /*Bright Yellow*/
+}
 
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+/* Add a simple overlay for better text readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+  z-index: 0;
+}
+
+/* Make sure the text is above the overlay */
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
 }
 
 /* Make the headline bold and modern */
@@ -78,7 +80,7 @@ section {
 
 /* Story Section Styles */
 .story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
+  background-color: #2E9DF7; /* Primary Blue*/
   color: #222;
   text-align: center;
   padding: 30px 20px;
@@ -86,14 +88,14 @@ section {
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color:#FFC907; /*Bright Yellow*/
   margin-top: 0;
   font-weight: bold;
 }
 
 /* Call-to-Action Section Styles */
 .call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
+  background-color:#2E9DF7; /*Primary Blue*/
   color: #222;
   text-align: center;
   padding: 30px 20px;
@@ -111,7 +113,7 @@ h2 {
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
+  background-color:#FFC907;  /*Bright Yellow*/
   color: #fff;
   padding: 14px 32px;
   text-decoration: none;
@@ -119,7 +121,7 @@ h2 {
   font-weight: bold;
   font-size: 1.1em;
   margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.10); /* Updated shadow color */
   transition: background 0.3s, transform 0.2s;
   border: none;
   cursor: pointer;
@@ -127,7 +129,7 @@ h2 {
 
 /* Change button color when hovered */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
+  background-color: #001a33; /* Even darker blue on hover */
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
